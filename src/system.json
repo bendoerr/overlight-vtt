@@ -20,13 +20,13 @@
   "languages": [],
   "gridDistance": 1,
   "gridUnits": "",
-  "minimumCoreVersion": "0.5.0",
-  "compatibleCoreVersion": "0.5.0",
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "license": "",
-  "readme": "",
-  "bugs": "",
-  "changelog": ""
+  "minimumCoreVersion": "0.7.9",
+  "compatibleCoreVersion": "0.7.9",
+  "url": "https://github.com/bendoerr/overlight-vtt",
+  "manifest": "https://github.com/bendoerr/overlight-vtt/releases/latest/download/system.json",
+  "download": "https://github.com/Spice-King/foundry-swnr/releases/latest/download/release.zip",
+  "license": "https://github.com/bendoerr/overlight-vtt/blob/main/LICENSE",
+  "readme": "https://github.com/bendoerr/overlight-vtt/blob/main/README",
+  "bugs": "https://github.com/bendoerr/overlight-vtt/issues",
+  "changelog": "https://github.com/bendoerr/overlight-vtt/releases"
 }
