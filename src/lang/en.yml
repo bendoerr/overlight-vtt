@@ -1,0 +1,242 @@
+overlight-vtt:
+  title: "Overlight"
+  CharacterActorSheet: Skyborn Sheet
+  folk:
+    zenith:
+      name: Zenith Order Monk
+      text: TODO
+    hamanu:
+      name: Hamanu
+      text: TODO
+    teryxian:
+      name: Teryxian
+      text: TODO
+    banyari:
+      name: Banyari
+      text: TODO
+    haarkeen:
+      name: Haarkeen
+      text: TODO
+    aurumel:
+      name: Aurumel
+      text: TODO
+    pyroi:
+      name: Pyroi
+      text: TODO
+  virtue:
+    spirit:
+      name: Spirit
+      color: White
+      text: >-
+        The power of the soul. Rarified. Ascending. Crystalline and triangular.
+        It is the color of light itself. White, it is all colors, and none at
+        all.
+    wisdom:
+      name: Wisdom
+      color: Violet
+      text: >-
+        The Violet light. Wisdom is life's experience, distilled and cunningly
+        refined. Both instinct and insight, piety and awareness. Wisdom is the
+        compass of the mind, and the sole method for navigating the ordeals of
+        your initiation and becoming. It is circular, stable. Encompassing and
+        clarifying.
+    logic:
+      name: Logic
+      color: Blue
+      text: >-
+        The ability to reason, to analyze. To sift through information,
+        codified data, and memory. Logic can build, make plans, and discern
+        subtle differences. From nothing comes something -- science,
+        mathematics, invention. The blue light of Ligic is chain-like,
+        reductive, and linear.
+    compassion:
+      name: Compassion
+      color: Green
+      text: >-
+        Upon realizing that the dichotomy of self and other is a self-imposed
+        delusion, we care connected to the activity of the primordial cosmos
+        itself. Compassion is the activity of this cosmos as well as its law.
+        The green light of the growing life of these seven shards, of which we
+        are a part. Compassion is sympathy, empathy, communication and
+        connection.
+    will:
+      name: Will
+      color: Yellow
+      text: >-
+        Like an arrow of intent, Will is the force of the self. The willpower
+        to establish your being, to formulate your needs and claim them from
+        the world. Will is also a shield. Its own defense, a bulwark against
+        the assault of others. Its light is yellow, reflected off the face of
+        a gold coin, a theoretical idea turned into tangible reality.
+    vigor:
+      name: Virgor
+      color: Orange
+      text: >-
+        Stamina and speed. Vigor is hungry and hot. It is two sticks furiously
+        rubbed together to beat back endless darkness and cold. Hearth fires
+        burn and families gather for warm feasts. The flow of the blacksmith's
+        ember as it turns iron to its color. The flesh of the world made manifest
+        in honey or amber. Vigor is the body as an object which is cared for,
+        optimized, and protected. Orange is its color.
+    might:
+      name: Might
+      color: Red
+      text: >-
+        The engine that drives the body. The force of that body. Might is the
+        abject result of pure power and strength. The killing blow, the
+        unstoppable force, and the capacity to persist under vile
+        circumstances, it is brute strength and simple persistence. Muscle and
+        mountains, iron and blood. The virture of war and the hunting of
+        titanic beasts. A fist squeezing red fire into intention.
+
+  skill:
+    folklore:
+      name: Folklore
+      virtue: Wisdom
+      text: >-
+        TODO
+    intuition:
+      name: Intuition
+      virtue: Wisdom
+      text: >-
+        TODO
+    perception:
+      name: Perception
+      virtue: Wisdom
+      text: >-
+        TODO
+    windlore:
+      name: Windlore
+      virtue: Logic
+      text: >-
+        TODO
+    machinery:
+      name: Machinery
+      virtue: Logic
+      text: >-
+        TODO
+    science:
+      name: Science
+      virtue: Logic
+      text: >-
+        TODO
+    beastways:
+      name: Beastways
+      virtue: Compassion
+      text: >-
+        TODO
+    inspiration:
+      name: Inspiration
+      virtue: Compassion
+      text: >-
+        TODO
+    performance:
+      name: Performance
+      virtue: Compassion
+      text: >-
+        TODO
+    craft:
+      name: Craft
+      virtue: Will
+      text: >-
+        TODO
+    persuasion:
+      name: Persuasion
+      virtue: Will
+      text: >-
+        TODO
+    resolve:
+      name: Resolve
+      virtue: Will
+      text: >-
+        TODO
+    athletics:
+      name: Athletics
+      virtue: Vigor
+      text: >-
+        TODO
+    blades:
+      name: Blades
+      virtue: Vigor
+      text: >-
+        TODO
+    survival:
+      name: Survival
+      virtue: Vigor
+      text: >-
+        TODO
+    brawl:
+      name: Brawl
+      virtue: Might
+      text: >-
+        TODO
+    resistance:
+      name: Resistance
+      virtue: Might
+      text: >-
+        TODO
+  spirit:
+    spirit:
+      name: Spirit
+  die:
+    untrained: Untrained
+    d4: D4
+    d6: D6
+    d8: D8
+    d10: D10
+    d12: D12
+  modifier:
+    none:
+      name: None
+      text: TODO
+    raise:
+      name: Raise
+      text: TODO
+    lower:
+      name: Lower
+      text: TODO
+    d6:
+      name: r1d6
+      text: TODO
+    d8:
+      name: r1d8
+      text: TODO
+    d10:
+      name: r1d10
+      text: TODO
+    d12:
+      name: r1d12
+      text: TODO
+  tests:
+    skill:
+      name: Skill Test
+    results:
+      fail:
+        name: Failure
+      luminous:
+        name: Luminous Success
+      radiant:
+        name: Radiant Success
+      brilliant:
+        name: Brilliant Success
+      legendary:
+        name: Legendary Success
+      flare:
+        name: Spirit Flare
+      pool:
+        name: +1 Spirit Pool
+      fury:
+        name: +1 Fury Pool
+  dialog:
+    roll-skill-test:
+      close: Close
+      include-spirit: Include Spirit Die?
+      roll: Roll
+      skill-die: Skill Die
+      skill: Skill
+      title: Roll Skill Test
+      virtue-die: Virtue Die
+      virtue: Virtue
+  chat:
+    roll-skill-test:
+      successes: Successes

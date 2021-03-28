@@ -1,6 +1,8 @@
 node_modules
 foundryconfig.json
-dist/module
-dist/templates
-dist/**/*.js
-dist/**/*.json
+dist
+package/
+foundry/
+src/module/entities.ts
+data/
+.vscode/launch.json

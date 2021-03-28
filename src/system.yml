@@ -1,0 +1,26 @@
+name: "overlight-vtt"
+title: Overlight
+description: "Unofficial and Work-in-progress FoundryVTT Game System for Overlight, a fantasy roleplaying game of kaleidoscopic journeys."
+version: "0.1.0-dev"
+authors:
+  - name: "Benjamin R. Doerr"
+    email: "craftsman@bendoerr.me"
+    url: "https://bendoerr.me"
+scripts:
+esmodules:
+  - "overlight-vtt.js"
+styles:
+  - "overlight-vtt.css"
+packs:
+languages:
+gridDistance: 1
+gridUnits: ""
+minimumCoreVersion: "0.7.9"
+compatibleCoreVersion: "0.7.9"
+url: "https://github.com/bendoerr/overlight-vtt"
+manifest: "https://github.com/bendoerr/overlight-vtt/releases/latest/download/system.json"
+download: "https://github.com/bendoerr/overlight-vtt/releases/latest/download/release.zip"
+license: "https://github.com/bendoerr/overlight-vtt/blob/main/LICENSE"
+readme: "https://github.com/bendoerr/overlight-vtt/blob/main/README"
+bugs: "https://github.com/bendoerr/overlight-vtt/issues"
+changelog: "https://github.com/bendoerr/overlight-vtt/releases"
