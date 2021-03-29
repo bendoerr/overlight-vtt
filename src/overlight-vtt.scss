@@ -1,2 +1,58 @@
 @use "sass:color";
 @use "sass:math";
+
+.overlight-svg-med svg {
+  width: 75px;
+  height: 75px;
+}
+
+.overlight-virtue-die {
+  border: 3px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  height: 70px;
+  width: 70px;
+  margin: auto;
+}
+
+.overlight-wisdom {
+  .overlight-svg path {
+    fill: darkviolet;
+  }
+}
+
+.overlight-logic {
+  .overlight-svg path {
+    fill: dodgerblue;
+  }
+}
+
+.overlight-compassion {
+  .overlight-svg path {
+    fill: forestgreen;
+  }
+}
+
+.overlight-will {
+  .overlight-svg path {
+    fill: yellow;
+  }
+}
+
+.overlight-vigor {
+  .overlight-svg path {
+    fill: darkorange;
+  }
+}
+
+.overlight-might {
+  .overlight-svg path {
+    fill: red;
+  }
+}
+
+.overlight-spirit {
+  .overlight-svg path {
+    fill: black;
+  }
+}

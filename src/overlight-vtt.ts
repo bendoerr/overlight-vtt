@@ -18,9 +18,11 @@
 import { OverlightCharacterActor } from "./module/actors/character";
 import { OverlightHand, OverlightPool } from "./module/roll";
 import { RollSkillTestDialog } from "./module/dialogs/roll-skill-test";
+import { OverlightCharacterSheet } from "./module/actors/character-sheet";
+import { registerAllHelpers } from "./module/handlebars";
 
 Hooks.once("init", async function () {
-  console.log("overlight-vtt | Initializing Overlight");
+  console.log("Overlight | Initializing Overlight");
 
   // Assign custom classes and constants here
   game.overlight = {
@@ -41,23 +43,13 @@ Hooks.once("init", async function () {
   game.i18n.localize("overlight-vtt.title");
 
   // Remove stock sheets
-  // Actors.unregisterSheet("core", ActorSheet);
+  Actors.unregisterSheet("core", ActorSheet);
+  Actors.registerSheet("overlight-vtt", OverlightCharacterSheet);
+
   // Items.unregisterSheet("core", ItemSheet);
 
-  Handlebars.registerHelper("debug", function () {
-    return JSON.stringify(this, null, 2);
-  });
-  Handlebars.registerHelper("stringify", function (obj) {
-    return JSON.stringify(obj, null, 2);
-  });
-  Handlebars.registerHelper("concat", function (a, b, c, d, e, f, o) {
-    return [a, b, c, d, e, f].filter((v) => typeof v === "string").join("");
-  });
-  Handlebars.registerHelper("if_eq", function (a, b, opts) {
-    if (a === b)
-      return opts.fn(this);
-    else return opts.inverse(this);
-  });
+  // Register Handlebar Helpers
+  registerAllHelpers();
 });
 
 /* ------------------------------------ */

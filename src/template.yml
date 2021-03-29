@@ -7,90 +7,32 @@ Actor:
     cake: 'foobar'
   character:
     virtues:
-      wisdom:
-        label: overlight-vtt.virtue.wisdom
-        value: d6
-      logic:
-        label: overlight-vtt.virtue.logic
-        value: d6
-      compassion:
-        label: overlight-vtt.virtue.compassion
-        value: d6
-      will:
-        label: overlight-vtt.virtue.will
-        value: d6
-      vigor:
-        label: overlight-vtt.virtue.vigor
-        value: d6
-      might:
-        label: overlight-vtt.virtue.might
-        value: d6
+      wisdom: d6
+      logic: d6
+      compassion: d6
+      will: d6
+      vigor: d6
+      might: d6
     skills:
-      folklore:
-        label: overlight-vtt.skill.folklore
-        value: untrained
-        untrained: true
-      intuition:
-        label: overlight-vtt.skill.intuition
-        value: untrained
-        untrained: true
-      perception:
-        label: overlight-vtt.skill.perception
-        value: untrained
-        untrained: true
-      windlore:
-        label: overlight-vtt.skill.windlore
-        value: untrained
-        untrained: true
-      machinery:
-        label: overlight-vtt.skill.machinery
-        value: untrained
-        untrained: true
-      science:
-        label: overlight-vtt.skill.science
-        value: untrained
-        untrained: true
-      beastways:
-        label: overlight-vtt.skill.beastways
-        value: untrained
-        untrained: true
-      inspiration:
-        label: overlight-vtt.skill.inspiration
-        value: untrained
-        untrained: true
-      performance:
-        label: overlight-vtt.skill.performance
-        value: untrained
-        untrained: true
-      craft:
-        label: overlight-vtt.skill.craft
-        value: untrained
-        untrained: true
-      persuasion:
-        label: overlight-vtt.skill.persuasion
-        value: untrained
-        untrained: true
-      resolve:
-        label: overlight-vtt.skill.resolve
-        value: untrained
-        untrained: true
-      athletics:
-        label: overlight-vtt.skill.athletics
-        value: untrained
-        untrained: true
-      blades:
-        label: overlight-vtt.skill.blades
-        value: untrained
-        untrained: true
-      survival:
-        label: overlight-vtt.skill.survival
-        value: untrained
-        untrained: true
-      brawl:
-        label: overlight-vtt.skill.brawl
-        value: untrained
-        untrained: true
-      resistance:
-        label: overlight-vtt.skill.resistance
-        value: untrained
-        untrained: true
+      folklore: d6
+      intuition: d6
+      perception: d6
+      windlore: d6
+      machinery: d6
+      science: d6
+      beastways: d6
+      inspiration: d6
+      performance: d6
+      craft: d6
+      persuasion: d6
+      resolve: d6
+      athletics: d6
+      blades: d6
+      survival: d6
+      brawl: d6
+      resistance: d6
+    spiritPool: 0
+    furyPool: 0
+    healthTrack:
+      current: 15
+      max: 15

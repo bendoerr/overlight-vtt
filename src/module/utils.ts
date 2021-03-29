@@ -1,6 +1,25 @@
 import { OverlightSkillType } from "./skill";
 import { OverlightVirtueType } from "./virtue";
 
+export function virtueToSkills(virtue: OverlightVirtueType): OverlightSkillType[] {
+  switch (virtue) {
+    case "wisdom":
+      return ["folklore", "intuition", "perception"];
+    case "logic":
+      return ["windlore", "machinery", "science"];
+    case "compassion":
+      return ["beastways", "inspiration", "performance"];
+    case "will":
+      return ["craft", "persuasion", "resolve"];
+    case "vigor":
+      return ["athletics", "blades", "survival"];
+    case "might":
+      return ["brawl", "resistance"];
+    default:
+      return [];
+  }
+}
+
 export function toColor(virtue: OverlightVirtueType | OverlightSkillType | "spirit"): string {
   switch (virtue) {
     case "wisdom":

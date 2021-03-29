@@ -13,6 +13,9 @@ styles:
   - "overlight-vtt.css"
 packs:
 languages:
+  - lang: en
+    name: English
+    path: lang/en.json
 gridDistance: 1
 gridUnits: ""
 minimumCoreVersion: "0.7.9"

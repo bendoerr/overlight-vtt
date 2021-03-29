@@ -6,9 +6,9 @@
       </div>
       <div style="font-size: smaller; margin-top: -4px;">
         {{successes}} {{localize 'overlight-vtt.chat.roll-skill-test.successes'}}
-        {{#if_eq spiritResult 'none'}}{{else}}
+        {{#if (ne spiritResult 'none')}}
         ({{localize (concat 'overlight-vtt.tests.results.' spiritResult '.name')}})
-        {{/if_eq}}
+        {{/if}}
       </div>
     </div>
     <div class="dice-tooltip">
@@ -49,7 +49,7 @@
             {{/each}}
           </ol>
         </div>
-        {{#if_eq poolSpiritFormula ''}}{{else}}
+        {{#if (ne poolSpiritFormula '')}}
         <div class="dice">
           <header class="part-header flexrow">
             <span class="part-formula">
@@ -68,7 +68,7 @@
             {{/each}}
           </ol>
         </div>
-        {{/if_eq}}
+        {{/if}}
       </section>
     </div>
   </div>

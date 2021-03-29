@@ -1,6 +1,6 @@
 import { OverlightSkillType } from "./skill";
 import { OverlightVirtueType } from "./virtue";
-import { toColor, toDice3dColor } from "./color";
+import { toColor, toDice3dColor } from "./utils";
 
 export declare type OverlightTestType = "skill" | "combat" | "open" | "chroma";
 export declare type OverlightPoolType = "virtue" | "skill" | "wealth" | "spirit" | "empty" | OverlightTestType;
@@ -13,6 +13,7 @@ export declare type OverlightGameResult = "fail" | "luminous" | "radiant" | "bri
 export declare type OverlightSpiritResult = "none" | "flare" | "pool" | "legendary" | "fury";
 
 export const OVERLIGHT_DIE_TYPES = ["untrained", "d4", "d6", "d8", "d10", "d12"] as const;
+export const OVERLIGHT_VIRTUE_DIE_TYPES = ["d6", "d8", "d10", "d12"] as const;
 export const OVERLIGHT_POOL_MODIFIERS = ["none", "raise", "lower", "d6", "d8", "d10", "d12"];
 
 export interface OverlightDie {

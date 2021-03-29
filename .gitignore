@@ -1,6 +1,6 @@
 node_modules
 foundryconfig.json
-dist
+dist/
 package/
 foundry/
 src/module/entities.ts

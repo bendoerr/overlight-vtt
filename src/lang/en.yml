@@ -1,6 +1,6 @@
 overlight-vtt:
   title: "Overlight"
-  CharacterActorSheet: Skyborn Sheet
+  OverlightCharacterSheet: Skyborn Sheet
   folk:
     zenith:
       name: Zenith Order Monk
@@ -178,6 +178,12 @@ overlight-vtt:
   spirit:
     spirit:
       name: Spirit
+  character:
+    name: Name
+    folk: Folk
+    core-virtue: Core Virtue
+    background: Background
+    xp: Experience
   die:
     untrained: Untrained
     d4: D4

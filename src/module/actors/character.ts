@@ -10,9 +10,7 @@ export declare interface OverlightCharacterData {
     max: number;
   };
   virtues: { [key in OverlightVirtueType]: OverlightDieType };
-  skills: {
-    [key in OverlightSkillType]: { untrained: boolean; value: OverlightDieType };
-  };
+  skills: { [key in OverlightSkillType]: OverlightDieType };
 }
 
 export class OverlightCharacterActor extends Actor<OverlightCharacterData> {

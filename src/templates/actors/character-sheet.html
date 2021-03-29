@@ -1,0 +1,99 @@
+<form id="character-sheet.form">
+  <div class="flexrow">
+    <div class="flexcol">
+      <img style="border: none;" src="systems/overlight-vtt/assets/logo.png">
+    </div>
+    <div class="flexcol">
+      <div class="flexrow">
+        <label for="character-sheet.name">
+          {{localize 'overlight-vtt.character.name'}}
+        </label>
+        <input id="character-sheet.name" value="{{actor.name}}" type="text" readonly>
+      </div>
+      <div class="flexrow">
+        <label for="character-sheet.folk">
+          {{localize 'overlight-vtt.character.folk'}}
+        </label>
+        <input id="character-sheet.folk" name="data.folk" value="{{data.folk}}" type="text">
+      </div>
+      <div class="flexrow">
+        <label for="character-sheet.core-virtue">
+          {{localize 'overlight-vtt.character.core-virtue'}}
+        </label>
+        <input id="character-sheet.core-virtue" name="data.coreVirtue" value="{{data.coreVirtue}}" type="text">
+      </div>
+      <div class="flexrow">
+        <label for="character-sheet.background">
+          {{localize 'overlight-vtt.character.background'}}
+        </label>
+        <input id="character-sheet.background" name="data.background" value="{{data.background}}" type="text">
+      </div>
+      <div class="flexrow">
+        <label for="character-sheet.xp">
+          {{localize 'overlight-vtt.character.xp'}}
+        </label>
+        <input id="character-sheet.xp" name="data.xp" value="{{data.xp}}" type="text">
+      </div>
+    </div>
+  </div>
+  <div class="flexrow">
+    <div class="flexcol">
+      <div class="flexrow overlight-spirit">
+        <div class="flexcol">
+        <span class="overlight-svg overlight-svg-med">
+          {{get_svg 'spirit'}}
+        </span>
+        </div>
+        <div class="flexcol">
+        </div>
+        <div class="flexcol">
+        </div>
+      </div>
+      {{#each data.virtues as |v k|}}
+      <div class="flexrow overlight-{{k}}">
+        <div class="flexcol">
+        <span class="overlight-svg overlight-svg-med">
+          {{get_svg k}}
+        </span>
+        </div>
+        <div class="flexcol">
+          <div class="overlight-virtue-die">
+            <select id="character-sheet.virtue.{{k}}.die" name="data.virtues.{{k}}">
+              {{#select v}}
+              <option value="d6">d6</option>
+              <option value="d8">d8</option>
+              <option value="d10">d10</option>
+              <option value="d12">d12</option>
+              {{/select}}
+            </select>
+          </div>
+        </div>
+        <div class="flexcol">
+          {{#each (v2s k) as |s|}}
+          <div class="flexrow">
+            <label for="character-sheet.skill.{{s}}">{{s}}</label>
+            <select id="character-sheet.skill.{{s}}" name="data.skills.{{s}}">
+              {{#select_it ../../data.skills s}}
+              <option value="untrained">untrained</option>
+              <option value="d6">d6</option>
+              <option value="d8">d8</option>
+              <option value="d10">d10</option>
+              <option value="d12">d12</option>
+              {{/select_it}}
+            </select>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="flexcol">
+      Stuff
+    </div>
+  </div>
+  <div>
+    <pre>
+{{stringify this}}
+    </pre>
+  </div>
+</form>
