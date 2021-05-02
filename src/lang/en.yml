@@ -26,6 +26,7 @@ overlight-vtt:
   virtue:
     spirit:
       name: Spirit
+      name-caps: SPIRIT
       color: White
       text: >-
         The power of the soul. Rarified. Ascending. Crystalline and triangular.
@@ -33,6 +34,7 @@ overlight-vtt:
         all.
     wisdom:
       name: Wisdom
+      name-caps: WISDOM
       color: Violet
       text: >-
         The Violet light. Wisdom is life's experience, distilled and cunningly
@@ -42,6 +44,7 @@ overlight-vtt:
         clarifying.
     logic:
       name: Logic
+      name-caps: LOGIC
       color: Blue
       text: >-
         The ability to reason, to analyze. To sift through information,
@@ -51,6 +54,7 @@ overlight-vtt:
         reductive, and linear.
     compassion:
       name: Compassion
+      name-caps: COMPASSION
       color: Green
       text: >-
         Upon realizing that the dichotomy of self and other is a self-imposed
@@ -61,6 +65,7 @@ overlight-vtt:
         connection.
     will:
       name: Will
+      name-caps: WILL
       color: Yellow
       text: >-
         Like an arrow of intent, Will is the force of the self. The willpower
@@ -70,6 +75,7 @@ overlight-vtt:
         a gold coin, a theoretical idea turned into tangible reality.
     vigor:
       name: Virgor
+      name-caps: VIGOR
       color: Orange
       text: >-
         Stamina and speed. Vigor is hungry and hot. It is two sticks furiously
@@ -80,6 +86,7 @@ overlight-vtt:
         optimized, and protected. Orange is its color.
     might:
       name: Might
+      name-caps: MIGHT
       color: Red
       text: >-
         The engine that drives the body. The force of that body. Might is the
@@ -88,7 +95,6 @@ overlight-vtt:
         circumstances, it is brute strength and simple persistence. Muscle and
         mountains, iron and blood. The virture of war and the hunting of
         titanic beasts. A fist squeezing red fire into intention.
-
   skill:
     folklore:
       name: Folklore

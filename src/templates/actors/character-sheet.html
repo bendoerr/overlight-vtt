@@ -1,63 +1,109 @@
-<form id="character-sheet.form">
-  <div class="flexrow">
-    <div class="flexcol">
-      <img style="border: none;" src="systems/overlight-vtt/assets/logo.png">
+<form class="overlight" id="character-sheet.form">
+  <div class="flexrow o-cs-header-row">
+    <div class="flexcol o-cs-logo">
+      <img src="systems/overlight-vtt/assets/logo.png" title="Overlight" />
     </div>
-    <div class="flexcol">
+    <div class="flexcol o-cs-core-details">
       <div class="flexrow">
         <label for="character-sheet.name">
           {{localize 'overlight-vtt.character.name'}}
         </label>
-        <input id="character-sheet.name" value="{{actor.name}}" type="text" readonly>
+        <input id="character-sheet.name" name="name" value="{{actor.name}}" type="text" />
       </div>
       <div class="flexrow">
         <label for="character-sheet.folk">
           {{localize 'overlight-vtt.character.folk'}}
         </label>
-        <input id="character-sheet.folk" name="data.folk" value="{{data.folk}}" type="text">
+        <select id="character-sheet.folk" name="data.folk">
+          {{#select data.folk}}
+          <option value=""></option>
+          <option value="zenith">{{localize 'overlight-vtt.folk.zenith.name'}}</option>
+          <option value="hamanu">{{localize 'overlight-vtt.folk.hamanu.name'}}</option>
+          <option value="teryxian">{{localize 'overlight-vtt.folk.teryxian.name'}}</option>
+          <option value="banyari">{{localize 'overlight-vtt.folk.banyari.name'}}</option>
+          <option value="haarkeen">{{localize 'overlight-vtt.folk.haarkeen.name'}}</option>
+          <option value="aurumel">{{localize 'overlight-vtt.folk.aurumel.name'}}</option>
+          <option value="pyroi">{{localize 'overlight-vtt.folk.pyroi.name'}}</option>
+          {{/select}}
+        </select>
       </div>
       <div class="flexrow">
         <label for="character-sheet.core-virtue">
           {{localize 'overlight-vtt.character.core-virtue'}}
         </label>
-        <input id="character-sheet.core-virtue" name="data.coreVirtue" value="{{data.coreVirtue}}" type="text">
+        <select id="character-sheet.core-virtue" name="data.coreVirtue">
+          {{#select data.coreVirtue}}
+          <option value=""></option>
+          <option value="wisdom">{{localize 'overlight-vtt.virtue.wisdom.name'}}</option>
+          <option value="logic">{{localize 'overlight-vtt.virtue.logic.name'}}</option>
+          <option value="compassion">{{localize 'overlight-vtt.virtue.compassion.name'}}</option>
+          <option value="will">{{localize 'overlight-vtt.virtue.will.name'}}</option>
+          <option value="vigor">{{localize 'overlight-vtt.virtue.vigor.name'}}</option>
+          <option value="might">{{localize 'overlight-vtt.virtue.might.name'}}</option>
+          {{/select}}
+        </select>
       </div>
       <div class="flexrow">
         <label for="character-sheet.background">
           {{localize 'overlight-vtt.character.background'}}
         </label>
-        <input id="character-sheet.background" name="data.background" value="{{data.background}}" type="text">
+        <input id="character-sheet.background" name="data.background" value="{{data.background}}" type="text" />
       </div>
       <div class="flexrow">
         <label for="character-sheet.xp">
           {{localize 'overlight-vtt.character.xp'}}
         </label>
-        <input id="character-sheet.xp" name="data.xp" value="{{data.xp}}" type="text">
+        <input id="character-sheet.xp" name="data.xp" value="{{data.xp}}" type="text" />
       </div>
+    </div>
+    <div class="flexcol o-cs-profile-image">
+      <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
     </div>
   </div>
   <div class="flexrow">
-    <div class="flexcol">
-      <div class="flexrow overlight-spirit">
-        <div class="flexcol">
-        <span class="overlight-svg overlight-svg-med">
-          {{get_svg 'spirit'}}
-        </span>
+    <div class="flexcol o-cs-virtues">
+      <div class="flexrow o-spirit o-cs-virtue-row">
+        <div class="flexcol o-flex-center o-w100">
+          <div class="o-v-svg">
+            {{get_svg 'spirit'}}
+          </div>
+          <div class="o-label">
+            {{localize 'overlight-vtt.virtue.spirit.name-caps'}}
+          </div>
         </div>
-        <div class="flexcol">
+        <div class="flexcol o-w100 o-cs-spirit-pool" style="background-image: url('data:image/svg+xml;base64,{{get_svg_b64 'spirit-triangle'}}');">
+          <div class="flexrow">
+            <input type="number" min="0" id="character-sheet.spirit-pool" name="data.spiritPool" value="{{data.spiritPool}}">
+          </div>
+          <div class="flexrow">
+            <label for="character-sheet.spirit-pool">
+              Spirit Pool
+            </label>
+          </div>
         </div>
-        <div class="flexcol">
+        <div class="flexcol o-w100 o-cs-fury-pool" style="background-image: url('data:image/svg+xml;base64,{{get_svg_b64 'fury-triangle'}}');">
+          <div class="flexrow">
+            <label for="character-sheet.fury-pool">
+              Fury Pool
+            </label>
+          </div>
+          <div class="flexrow">
+            <input type="number" min="0" id="character-sheet.fury-pool" name="data.furyPool" value="{{data.furyPool}}">
+          </div>
         </div>
       </div>
       {{#each data.virtues as |v k|}}
-      <div class="flexrow overlight-{{k}}">
-        <div class="flexcol">
-        <span class="overlight-svg overlight-svg-med">
-          {{get_svg k}}
-        </span>
+      <div class="flexrow o-{{k}} o-cs-virtue-row">
+        <div class="flexcol o-flex-center o-w100">
+          <div class="o-v-svg">
+            {{get_svg k}}
+          </div>
+          <div class="o-label">
+            {{localize (concat 'overlight-vtt.virtue.' k '.name-caps')}}
+          </div>
         </div>
-        <div class="flexcol">
-          <div class="overlight-virtue-die">
+        <div class="flexcol o-flex-center o-w100">
+          <div class="o-cs-v-die o-flex-center">
             <select id="character-sheet.virtue.{{k}}.die" name="data.virtues.{{k}}">
               {{#select v}}
               <option value="d6">d6</option>
@@ -68,13 +114,14 @@
             </select>
           </div>
         </div>
-        <div class="flexcol">
+        <div class="flexcol o-cs-virtue-skills">
           {{#each (v2s k) as |s|}}
-          <div class="flexrow">
-            <label for="character-sheet.skill.{{s}}">{{s}}</label>
-            <select id="character-sheet.skill.{{s}}" name="data.skills.{{s}}">
+          <div class="flexrow o-cs-virtue-skill-row">
+            <label for="character-sheet.skill.{{s}}" class="o-label">
+              {{localize (concat 'overlight-vtt.skill.' s '.name')}}
+            </label>
+            <select id="character-sheet.skill.{{s}}" name="data.skills.{{s}}" class="overlight-cs-select-die-{{v}}">
               {{#select_it ../../data.skills s}}
-              <option value="untrained">untrained</option>
               <option value="d6">d6</option>
               <option value="d8">d8</option>
               <option value="d10">d10</option>
@@ -87,8 +134,34 @@
       </div>
       {{/each}}
     </div>
-    <div class="flexcol">
-      Stuff
+    <div class="flexcol o-cs-health">
+      Health Track
+    </div>
+    <div class="flexcol o-cs-misc">
+      <div class="flexrow o-cs-textarea o-cs-gifts">
+        <div class="flexcol">
+          <h2>Gifts</h2>
+          <textarea></textarea>
+        </div>
+      </div>
+      <div class="flexrow o-cs-textarea o-cs-belongings">
+        <div class="flexcol">
+          <h2>Belongings</h2>
+          <textarea></textarea>
+        </div>
+      </div>
+      <div class="flexrow o-cs-textarea o-cs-wealth">
+        <div class="flexcol">
+          <h2>Wealth</h2>
+          <textarea></textarea>
+        </div>
+      </div>
+      <div class="flexrow o-cs-textarea o-cs-valuable">
+        <div class="flexcol">
+          <h2>Valuables</h2>
+          <textarea></textarea>
+        </div>
+      </div>
     </div>
   </div>
   <div>

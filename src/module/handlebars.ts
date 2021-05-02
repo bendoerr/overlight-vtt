@@ -10,6 +10,7 @@ export function registerAllHelpers(): void {
   Handlebars.registerHelper(concat.name, concat);
   Handlebars.registerHelper(select_it.name, select_it);
   Handlebars.registerHelper(get_svg.name, get_svg);
+  Handlebars.registerHelper(get_svg_b64.name, get_svg_b64);
 
   // Util helpers
   Handlebars.registerHelper("v2s", virtueToSkills);
@@ -39,9 +40,11 @@ const SVGS = {
   will: "",
   vigor: "",
   might: "",
+  "fury-triangle": "",
+  "spirit-triangle": "",
 };
 
-function loadOverlightSvgs(): void {
+export function loadOverlightSvgs(): void {
   for (const key in SVGS) {
     game.socket.emit("template", `systems/overlight-vtt/assets/svgs/${key}.html`, (resp) => {
       if (resp.error) return console.error(resp.error);
@@ -53,4 +56,8 @@ function loadOverlightSvgs(): void {
 
 function get_svg(name: string): Handlebars.SafeString {
   return new Handlebars.SafeString(SVGS[name]);
+}
+
+function get_svg_b64(name: string): Handlebars.SafeString {
+  return new Handlebars.SafeString(btoa(SVGS[name]));
 }

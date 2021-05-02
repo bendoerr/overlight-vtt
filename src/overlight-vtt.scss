@@ -1,58 +1,327 @@
 @use "sass:color";
 @use "sass:math";
 
-.overlight-svg-med svg {
-  width: 75px;
-  height: 75px;
-}
+$font-stack: Tahoma, sans-serif;
 
-.overlight-virtue-die {
-  border: 3px solid transparent;
-  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-  border-image-slice: 1;
-  height: 70px;
-  width: 70px;
-  margin: auto;
-}
+$color-wisdom: darkviolet;
+$color-logic: dodgerblue;
+$color-compassion: scale-color(green, $lightness: 10%);
+$color-will: scale-color(yellow, $lightness: -10%);
+$color-vigor: darkorange;
+$color-might: red;
+$color-spirit: darken(dimgray, 90%);
 
-.overlight-wisdom {
-  .overlight-svg path {
-    fill: darkviolet;
+.overlight {
+  font: 100% $font-stack;
+  font-weight: bold;
+
+  input {
+    font: 100% $font-stack;
   }
-}
 
-.overlight-logic {
-  .overlight-svg path {
-    fill: dodgerblue;
+  select {
+    font: 100% $font-stack;
   }
-}
 
-.overlight-compassion {
-  .overlight-svg path {
-    fill: forestgreen;
+  .o-cs-header-row {
+    justify-content: space-evenly;
+    align-items: center;
+
+    .o-cs-logo {
+      justify-content: center;
+      align-items: center;
+
+      img {
+        border: none;
+        display: block;
+        max-width: 250px;
+        max-height: 145px;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .o-cs-profile-image {
+      justify-content: center;
+      align-items: center;
+
+      img {
+        border: none;
+        display: block;
+        max-width: 300px;
+        max-height: 145px;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .o-cs-core-details {
+      margin-bottom: 10px;
+
+      .flexrow {
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 3px;
+
+        border-bottom-color: grey;
+        border-bottom-style: solid;
+        border-bottom-width: thin;
+
+        label {
+          max-width: 100px;
+        }
+
+        input {
+          max-width: 200px;
+          border: none;
+          background: none;
+        }
+
+        select {
+          max-width: 200px;
+          border: none;
+          background: none;
+          appearance: none;
+        }
+      }
+    }
   }
-}
 
-.overlight-will {
-  .overlight-svg path {
-    fill: yellow;
+  .o-cs-spirit-pool {
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 18px;
+
+    .flexrow {
+      flex: 0;
+    }
+
+    input[type=number] {
+      max-width: 30px;
+      font-size: larger;
+      font-weight: bold;
+      border: none;
+      background: none;
+      text-align: center;
+      margin-bottom: 6px;
+      color: darken($color-wisdom, 20%);
+    }
+
+    label {
+      color: darken($color-wisdom, 20%);
+      font-size: smaller;
+      padding-bottom: 5px;
+    }
   }
-}
 
-.overlight-vigor {
-  .overlight-svg path {
-    fill: darkorange;
+  .o-cs-fury-pool {
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 0px;
+    padding-top: 16px;
+    margin-left: -20px;
+
+    .flexrow {
+      flex: 0;
+    }
+
+    input[type=number] {
+      max-width: 30px;
+      font-size: larger;
+      font-weight: bold;
+      border: none;
+      background: none;
+      text-align: center;
+      margin-bottom: 6px;
+      color: darken(#fff, 10%);
+    }
+
+    label {
+      color: darken(#fff, 10%);
+      font-size: smaller;
+      padding-bottom: 5px;
+    }
   }
-}
 
-.overlight-might {
-  .overlight-svg path {
-    fill: red;
+  .o-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-}
 
-.overlight-spirit {
-  .overlight-svg path {
-    fill: black;
+  .o-w100 {
+    max-width: 100px;
+    min-width: 100px;
+  }
+
+  .o-cs-virtues {
+    max-width: 385px;
+    min-width: 385px;
+  }
+
+  .o-cs-virtue-row {
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+
+    margin-bottom: 0;
+    margin-left: 4px;
+    margin-right: 6px;
+    margin-top: 0;
+
+    border-top-color: indigo;
+    border-top-style: solid;
+    border-top-width: thin;
+
+    align-items: stretch;
+    align-content: flex-start;
+
+    .o-v-svg svg {
+      width: 75px;
+      height: 75px;
+      padding: 4px;
+    }
+
+  }
+
+  .o-cs-virtue-skills {
+    justify-content: center;
+    min-width: 150px;
+    max-width: 150px;
+  }
+
+  .o-cs-virtue-skill-row {
+    justify-content: space-between;
+    align-items: center;
+
+    max-height: 25px;
+
+    padding-right: 6px;
+    padding-left: 10px;
+
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+
+    select {
+      border: none;
+      background: none;
+      appearance: none;
+      text-align-last: center;
+      font-weight: bold;
+      max-width: 40px;
+    }
+  }
+
+
+  .o-cs-v-die {
+    border: 2px solid transparent;
+    border-image: linear-gradient(
+                    to bottom right,
+                    transparentize($color-wisdom, 0.7) 0%,
+                    transparentize($color-logic, 0.7) 25%,
+                    transparentize($color-compassion, 0.7) 40%,
+                    transparentize($color-will, 0.7) 60%,
+                    transparentize($color-vigor, 0.7) 80%,
+                    transparentize($color-might, 0.7) 100%
+    );
+    border-image-slice: 1;
+
+    min-height: 60px;
+    max-height: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    width: 60px;
+    height: 60px;
+
+    margin: 15px;
+
+    select {
+      border: none;
+      background: none;
+      appearance: none;
+      text-align-last: center;
+      height: 50px;
+      width: 50px;
+
+      font-weight: bold;
+      font-size: large;
+      color: antiquewhite;
+    }
+  }
+
+  .o-cs-health {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    min-width: 25px;
+    max-width: 25px;
+  }
+
+  @mixin o-cs-v-colors($c) {
+    $t: scale-color($c, $lightness: -50%);
+
+    .o-label {
+      color: $t;
+    }
+
+    .o-v-svg path {
+      fill: $c;
+    }
+
+    .o-cs-v-die {
+      background: radial-gradient(circle,
+              transparentize($c, 0.1) 0%,
+              transparentize($c, 0.5) 11%,
+              transparentize($c, 0.9) 65%,
+              transparentize($c, 1) 95%
+      );
+
+      select {
+        //text-shadow: -2px 0 $t, 0 2px $t, 2px 0 $t, 0 -2px $t;
+        text-shadow: 0 0 4px $t;
+      }
+    }
+
+    .o-cs-virtue-skill-row {
+      select {
+        color: $t
+      }
+    }
+  }
+
+  .o-wisdom {
+    @include o-cs-v-colors($color-wisdom);
+  }
+
+  .o-logic {
+    @include o-cs-v-colors($color-logic);
+  }
+
+  .o-compassion {
+    @include o-cs-v-colors($color-compassion);
+  }
+
+  .o-will {
+    //@include o-cs-v-colors($color-will, darken(DarkKhaki, 10%));
+    @include o-cs-v-colors($color-will);
+  }
+
+  .o-vigor {
+    @include o-cs-v-colors($color-vigor);
+  }
+
+  .o-might {
+    @include o-cs-v-colors($color-might);
+
+    &.o-cs-virtue-row {
+      border-bottom-color: indigo;
+      border-bottom-style: solid;
+      border-bottom-width: thin;
+    }
+  }
+
+  .o-spirit {
+    @include o-cs-v-colors($color-spirit);
   }
 }
