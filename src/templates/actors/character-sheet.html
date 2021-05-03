@@ -1,4 +1,4 @@
-<form class="overlight" id="character-sheet.form">
+<form class="overlight" id="character-sheet.form" autocomplete="off">
   <div class="flexrow o-cs-header-row">
     <div class="flexcol o-cs-logo">
       <img src="systems/overlight-vtt/assets/logo.png" title="Overlight" />
@@ -71,9 +71,11 @@
             {{localize 'overlight-vtt.virtue.spirit.name-caps'}}
           </div>
         </div>
-        <div class="flexcol o-w100 o-cs-spirit-pool" style="background-image: url('data:image/svg+xml;base64,{{get_svg_b64 'spirit-triangle'}}');">
+        <div class="flexcol o-w100 o-cs-spirit-pool"
+             style="background-image: url('data:image/svg+xml;base64,{{get_svg_b64 'spirit-triangle'}}');">
           <div class="flexrow">
-            <input type="number" min="0" id="character-sheet.spirit-pool" name="data.spiritPool" value="{{data.spiritPool}}">
+            <input type="number" min="0" id="character-sheet.spirit-pool" name="data.spiritPool"
+                   value="{{data.spiritPool}}">
           </div>
           <div class="flexrow">
             <label for="character-sheet.spirit-pool">
@@ -81,7 +83,8 @@
             </label>
           </div>
         </div>
-        <div class="flexcol o-w100 o-cs-fury-pool" style="background-image: url('data:image/svg+xml;base64,{{get_svg_b64 'fury-triangle'}}');">
+        <div class="flexcol o-w100 o-cs-fury-pool"
+             style="background-image: url('data:image/svg+xml;base64,{{get_svg_b64 'fury-triangle'}}');">
           <div class="flexrow">
             <label for="character-sheet.fury-pool">
               Fury Pool
@@ -140,31 +143,89 @@
     <div class="flexcol o-cs-misc">
       <div class="flexrow o-cs-textarea o-cs-gifts">
         <div class="flexcol">
-          <h2>Gifts</h2>
-          <textarea></textarea>
+          <label for="character-sheet.gifts" class="o-cs-heading">Gifts</label>
+          <textarea id="character-sheet.gifts" name="data.gifts" rows="5">{{data.gifts}}</textarea>
         </div>
       </div>
       <div class="flexrow o-cs-textarea o-cs-belongings">
         <div class="flexcol">
-          <h2>Belongings</h2>
-          <textarea></textarea>
+          <label class="o-cs-heading" for="character-sheet.belongings">Belongings</label>
+          <textarea id="character-sheet.belongings" name="data.belongings" rows="5">{{data.belongings}}</textarea>
         </div>
       </div>
       <div class="flexrow o-cs-textarea o-cs-wealth">
-        <div class="flexcol">
-          <h2>Wealth</h2>
-          <textarea></textarea>
+        <div class="flexcol o-wealth">
+          <label class="o-cs-heading">Wealth</label>
+          <div class="o-cs-wealth-rows">
+            <div class="flexrow o-cs-virtue-skill-row">
+              <label for="character-sheet.wealth-die" class="o-label">
+                Wealth Die
+              </label>
+              <select id="character-sheet.wealth-die" name="data.wealthDie" class="overlight-cs-select-die-wealth">
+                {{#select data.wealthDie}}
+                <option value="">n/a</option>
+                <option value="d4">d4</option>
+                <option value="d6">d6</option>
+                <option value="d8">d8</option>
+                <option value="d10">d10</option>
+                <option value="d12">d12</option>
+                {{/select}}
+              </select>
+            </div>
+            <div class="flexrow o-cs-virtue-skill-row">
+              <label for="character-sheet.wealth-pool" class="o-label">
+                Wealth Pool
+              </label>
+              <input id="character-sheet.wealth-pool" name="data.wealthPool" class="overlight-cs-select-die-wealth"
+                     type="number" min="0" value="{{data.wealthPool}}" />
+            </div>
+          </div>
         </div>
       </div>
       <div class="flexrow o-cs-textarea o-cs-valuable">
         <div class="flexcol">
-          <h2>Valuables</h2>
-          <textarea></textarea>
+          <label class="o-cs-heading" for="character-sheet.valuables">Valuables</label>
+          <textarea id="character-sheet.valuables" name="data.valuables" rows="5">{{data.valuables}}</textarea>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="flexrow o-cs-chroma-heading">
+    <div class="flexcol">
+      <label class="o-cs-heading">Chroma</label>
+    </div>
+  </div>
+
+  <div class="flexrow o-cs-chroma">
+    {{#each data.chroma as |v k|}}
+    1:{{v}}
+    2:{{k}}
+<!--    <div class="flexrow">-->
+<!--      <p>Row {{j}}</p>-->
+<!--      <div class="flexcol">-->
+<!--        <div class="flexrow">-->
+<!--          Chroma-->
+<!--        </div>-->
+<!--        <div class="flexrow">-->
+<!--          Virtue + Virtue-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="flexcol">-->
+<!--      <p>I: {{i}}</p>-->
+<!--      <p>R: {{../rows}}</p>-->
+<!--      <p>C: {{../../chroma.rows}}</p>-->
+
+<!--      {{#each ../rows as |j|}}-->
+<!--      {{/each}}-->
+
+<!--    </div>-->
+    {{/each}}
+  </div>
+
   <div>
+    Debug
     <pre>
 {{stringify this}}
     </pre>
