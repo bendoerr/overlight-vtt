@@ -1,7 +1,25 @@
 <form class="overlight" id="character-sheet.form" autocomplete="off">
   <div class="flexrow o-cs-header-row">
-    <div class="flexcol o-cs-logo">
-      <img src="systems/overlight-vtt/assets/logo.png" title="Overlight" />
+    <div class="flexcol">
+      <div class="flexrow o-cs-logo">
+        <img src="systems/overlight-vtt/assets/logo.png" title="Overlight" />
+      </div>
+      <div class="flexrow">
+        <div class="flexcol o-cs-rolls-heading">
+          Rolls:
+        </div>
+        <div class="flexcol">
+          <div class="flexrow o-cs-rolls">
+            <a class="o-cs-do-skill-roll" href="#">Skill</a>
+            <a class="o-cs-do-combat-roll" href="#">Combat</a>
+          </div>
+          <div class="flexrow o-cs-rolls">
+            <a class="o-cs-do-open-roll" href="#">Open</a>
+            <a class="o-cs-do-wealth-roll" href="#">Wealth</a>
+            <a class="o-cs-do-chroma-roll" href="#">Chroma</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="flexcol o-cs-core-details">
       <div class="flexrow">
@@ -138,9 +156,194 @@
       {{/each}}
     </div>
     <div class="flexcol o-cs-health">
-      Health Track
+      <div class="flexrow o-cs-heading">
+        <label>Health<br />Track</label>
+      </div>
+      <div class="flexrow o-cs-h-max">
+        <label>Max</label>
+        <input type="number" min="1" max="20" id="character-sheet.health.max" name="data.health.max"
+               value="{{data.health.max}}">
+      </div>
+      <div class="flexcol o-cs-h-boxes">
+
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b1"
+                 name="data.health.boxes.b1.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b1.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b1.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b2"
+                 name="data.health.boxes.b2.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b2.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b2.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b3"
+                 name="data.health.boxes.b3.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b3.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b3.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box o-cs-h-box-r">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b4"
+                 name="data.health.boxes.b4.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b4.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b4.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b5"
+                 name="data.health.boxes.b5.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b5.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b5.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b6"
+                 name="data.health.boxes.b6.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b6.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b6.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b7"
+                 name="data.health.boxes.b7.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b7.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b7.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box o-cs-h-box-r">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b8"
+                 name="data.health.boxes.b8.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b8.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b8.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b9"
+                 name="data.health.boxes.b9.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b9.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b9.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b10"
+                 name="data.health.boxes.b10.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b10.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b10.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b11"
+                 name="data.health.boxes.b11.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b11.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b11.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box o-cs-h-box-r">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b12"
+                 name="data.health.boxes.b12.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b12.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b12.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b13"
+                 name="data.health.boxes.b13.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b13.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b13.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b14"
+                 name="data.health.boxes.b14.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b14.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b14.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b15"
+                 name="data.health.boxes.b15.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b15.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b15.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box o-cs-h-box-r">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b16"
+                 name="data.health.boxes.b16.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b16.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b16.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b17"
+                 name="data.health.boxes.b17.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b17.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b17.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b18"
+                 name="data.health.boxes.b18.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b18.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b18.checked}}>
+        </div>
+        <div class="flexrow o-cs-h-box">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b19"
+                 name="data.health.boxes.b19.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b19.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b19.checked}}>
+        </div>
+
+        <div class="flexrow o-cs-h-box o-cs-h-box-r">
+          <input type="checkbox"
+                 id="character-sheet.health.boxes.b20"
+                 name="data.health.boxes.b20.checked"
+                 data-dtype="Boolean"
+                 {{#if data.health.boxes.b20.disabled}}disabled{{/if}}
+          {{checked data.health.boxes.b20.checked}}>
+        </div>
+      </div>
     </div>
     <div class="flexcol o-cs-misc">
+      <div class="flexrow o-cs-textarea o-cs-appearance">
+        <div class="flexcol">
+          <label for="character-sheet.appearance" class="o-cs-heading">Appearance/Notes</label>
+          <textarea id="character-sheet.appearance" name="data.appearance" rows="5">{{data.appearance}}</textarea>
+        </div>
+      </div>
       <div class="flexrow o-cs-textarea o-cs-gifts">
         <div class="flexcol">
           <label for="character-sheet.gifts" class="o-cs-heading">Gifts</label>
@@ -191,43 +394,21 @@
     </div>
   </div>
 
-  <div class="flexrow o-cs-chroma-heading">
+  <div class="flexrow o-cs-textarea o-cs-chroma">
     <div class="flexcol">
-      <label class="o-cs-heading">Chroma</label>
+      <label class="o-cs-heading" for="character-sheet.chroma-all-text">Chroma</label>
+<!--      <textarea id="character-sheet.chroma-all-text" name="data.chromaAll" rows="40">{{data.chromaAll}}</textarea>-->
+      {{editor content=data.chromaAll target="data.chromaAll" button=true owner=owner editable=true}}
     </div>
   </div>
 
-  <div class="flexrow o-cs-chroma">
-    {{#each data.chroma as |v k|}}
-    1:{{v}}
-    2:{{k}}
-<!--    <div class="flexrow">-->
-<!--      <p>Row {{j}}</p>-->
-<!--      <div class="flexcol">-->
-<!--        <div class="flexrow">-->
-<!--          Chroma-->
-<!--        </div>-->
-<!--        <div class="flexrow">-->
-<!--          Virtue + Virtue-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="flexcol">-->
-<!--      <p>I: {{i}}</p>-->
-<!--      <p>R: {{../rows}}</p>-->
-<!--      <p>C: {{../../chroma.rows}}</p>-->
-
-<!--      {{#each ../rows as |j|}}-->
-<!--      {{/each}}-->
-
-<!--    </div>-->
-    {{/each}}
-  </div>
-
-  <div>
-    Debug
-    <pre>
+  <div class="flexrow o-cs-textarea o-cs-debug">
+    <div class="flexcol">
+      <label class="o-cs-heading" for="character-sheet.debug">Debug</label>
+      <pre id="character-sheet.debug">
 {{stringify this}}
     </pre>
+    </div>
   </div>
+
 </form>

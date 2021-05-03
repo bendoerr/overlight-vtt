@@ -50,6 +50,8 @@ Hooks.once("init", async function () {
 
   // Register Handlebar Helpers
   registerAllHelpers();
+
+  console.log("Overlight | Initializing Overlight Done");
 });
 
 /* ------------------------------------ */
@@ -57,6 +59,8 @@ Hooks.once("init", async function () {
 /* ------------------------------------ */
 Hooks.once("setup", function () {
   // Do anything after initialization but before ready
+  console.log("Overlight | Setting Up Overlight");
+  console.log("Overlight | Setting Up Overlight Done");
 });
 
 /* ------------------------------------ */
@@ -64,5 +68,13 @@ Hooks.once("setup", function () {
 /* ------------------------------------ */
 Hooks.once("ready", function () {
   // Do anything once the system is ready
-  // Reference a Compendium pack by it's collection ID
+  console.log("Overlight | Preparing Overlight");
+
+  // Attach the standard roll dialog to the d20 on chat
+  $(document).on("click", "#chat-controls .chat-control-icon .fa-dice-d20", () => {
+    const a = new game.overlight.dialogs.RollSkillTestDialog();
+    a.render();
+  });
+
+  console.log("Overlight | Preparing Overlight Done");
 });

@@ -14,7 +14,7 @@ import { OverlightSkillType } from "../skill";
 export declare interface OverlightCharacterData {
   spiritPool: number;
   furyPool: number;
-  healthTrack: {
+  health: {
     current: number;
     max: number;
   };

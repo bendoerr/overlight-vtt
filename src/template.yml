@@ -33,6 +33,6 @@ Actor:
       resistance: d6
     spiritPool: 0
     furyPool: 0
-    healthTrack:
-      current: 15
-      max: 15
+    health:
+      current: 20
+      max: 20
