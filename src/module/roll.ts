@@ -9,7 +9,7 @@ export declare type OverlightDieType = "untrained" | "d4" | "d6" | "d8" | "d10" 
 export declare type OverlightFace = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 0;
 export declare type OverlightHandType = "skill" | "combat" | "open" | "chroma" | "wealth";
 export declare type OverlightModifier = "raise" | "lower" | "none" | "d6" | "d8" | "d10" | "d12";
-export declare type OverlightGameResult = "fail" | "luminous" | "radiant" | "brilliant" | "legendary";
+export declare type OverlightGameResult = "fail" | "luminous" | "radiant" | "brilliant" | "legendary" | "success";
 export declare type OverlightSpiritResult = "none" | "flare" | "pool" | "legendary" | "fury";
 
 export const OVERLIGHT_DIE_TYPES = ["untrained", "d4", "d6", "d8", "d10", "d12"] as const;
@@ -347,11 +347,37 @@ export class OverlightCombatTest implements OverlightTest<OverlightCombatTestRes
   result(): OverlightCombatTestResult {
     this.hand.roll();
 
-    return {
+    const result = {
       damage: this.hand.successes(),
       fury: this.hand.poolSpirit.successes() > 0,
+      successesRaw: this.hand.successes(),
+      gameResult: "fail" as OverlightGameResult,
+      gameResultRaw: "fail" as OverlightGameResult,
+      spiritResult: "none" as OverlightSpiritResult,
       hand: this.hand,
+      poolOneType: this.hand.poolOne.type,
+      poolOneName: this.hand.poolOne.name,
+      poolOneFormula: this.hand.poolOne.toFoundry()[0].formula,
+      poolOneSuccesses: this.hand.poolOne.successes(),
+      poolOneResults: this.hand.poolOne.results(),
+      poolTwoType: this.hand.poolTwo.type,
+      poolTwoName: this.hand.poolTwo.name,
+      poolTwoFormula: this.hand.poolTwo.toFoundry()[0].formula,
+      poolTwoSuccesses: this.hand.poolTwo.successes(),
+      poolTwoResults: this.hand.poolTwo.results(),
+      poolSpiritName: this.hand.poolSpirit.name,
+      poolSpiritType: this.hand.poolSpirit.type,
+      poolSpiritFormula: this.hand.poolSpirit.toFoundry().length > 0 ? this.hand.poolSpirit.toFoundry()[0].formula : "",
+      poolSpiritSuccesses: this.hand.poolSpirit.successes(),
+      poolSpiritResults: this.hand.poolSpirit.results(),
     };
+
+    if (result.damage > 0) {
+      result.gameResult = "success";
+      result.gameResultRaw = "success";
+    }
+
+    return result;
   }
 }
 

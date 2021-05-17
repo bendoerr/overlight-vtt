@@ -222,6 +222,8 @@ overlight-vtt:
   tests:
     skill:
       name: Skill Test
+    combat:
+      name: Combat Test
     results:
       fail:
         name: Failure
@@ -249,6 +251,17 @@ overlight-vtt:
       title: Roll Skill Test
       virtue-die: Virtue Die
       virtue: Virtue
+    roll-combat-test:
+      close: Close
+      include-spirit: Include Spirit Die?
+      roll: Roll
+      skill-die: Skill Die
+      skill: Skill
+      title: Roll Combat Test
+      virtue-die: Virtue Die
+      virtue: Virtue
   chat:
     roll-skill-test:
       successes: Successes
+    roll-combat-test:
+      damage: Damage
