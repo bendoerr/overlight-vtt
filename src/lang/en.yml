@@ -221,9 +221,11 @@ overlight-vtt:
       text: TODO
   tests:
     skill:
-      name: Skill Test
+      name: 🧬 Skill Test
     combat:
-      name: Combat Test
+      name: ⚔️ Combat Test
+    open:
+      name: 💠 Open Test
     results:
       fail:
         name: Failure
@@ -245,19 +247,28 @@ overlight-vtt:
     roll-skill-test:
       close: Close
       include-spirit: Include Spirit Die?
-      roll: Roll
+      roll: Roll 🎲
       skill-die: Skill Die
       skill: Skill
-      title: Roll Skill Test
+      title: Roll 🧬 Skill Test
       virtue-die: Virtue Die
       virtue: Virtue
     roll-combat-test:
       close: Close
       include-spirit: Include Spirit Die?
-      roll: Roll
+      roll: Roll 🎲
       skill-die: Skill Die
       skill: Skill
-      title: Roll Combat Test
+      title: Roll ⚔️ Combat Test
+      virtue-die: Virtue Die
+      virtue: Virtue
+    roll-open-test:
+      close: Close
+      include-spirit: Include Spirit Die?
+      roll: Roll 🎲
+      skill-die: Skill Die
+      skill: Skill
+      title: Roll 💠️ Open Test
       virtue-die: Virtue Die
       virtue: Virtue
   chat:
@@ -265,3 +276,5 @@ overlight-vtt:
       successes: Successes
     roll-combat-test:
       damage: Damage
+    roll-open-test:
+      highest: Highest

@@ -401,9 +401,26 @@ export class OverlightOpenTest implements OverlightTest<OverlightOpenTestResult>
       highestRaw: this.hand.highestResult().face,
       bonus: this.hand.poolSpirit.successes() > 0,
       hand: this.hand,
+      spiritResult: "none",
+      poolOneType: this.hand.poolOne.type,
+      poolOneName: this.hand.poolOne.name,
+      poolOneFormula: this.hand.poolOne.toFoundry()[0].formula,
+      poolOneSuccesses: this.hand.poolOne.successes(),
+      poolOneResults: this.hand.poolOne.results(),
+      poolTwoType: this.hand.poolTwo.type,
+      poolTwoName: this.hand.poolTwo.name,
+      poolTwoFormula: this.hand.poolTwo.toFoundry()[0].formula,
+      poolTwoSuccesses: this.hand.poolTwo.successes(),
+      poolTwoResults: this.hand.poolTwo.results(),
+      poolSpiritName: this.hand.poolSpirit.name,
+      poolSpiritType: this.hand.poolSpirit.type,
+      poolSpiritFormula: this.hand.poolSpirit.toFoundry().length > 0 ? this.hand.poolSpirit.toFoundry()[0].formula : "",
+      poolSpiritSuccesses: this.hand.poolSpirit.successes(),
+      poolSpiritResults: this.hand.poolSpirit.results(),
     };
     if (result.bonus) {
       result.highest += 1;
+      result.spiritResult = "flare";
     }
     return result;
   }
