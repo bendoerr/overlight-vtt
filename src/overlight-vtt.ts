@@ -22,6 +22,7 @@ import { OverlightCharacterSheet } from "./module/actors/character-sheet";
 import { registerAllHelpers } from "./module/handlebars";
 import { RollCombatTestDialog } from "./module/dialogs/roll-combat-test";
 import { RollOpenTestDialog } from "./module/dialogs/roll-open-test";
+import { RollChromaTestDialog } from "./module/dialogs/roll-chroma-test";
 
 Hooks.once("init", async function () {
   console.log("Overlight | Initializing Overlight");
@@ -39,6 +40,7 @@ Hooks.once("init", async function () {
       RollSkillTestDialog,
       RollCombatTestDialog,
       RollOpenTestDialog,
+      RollChromaTestDialog,
     },
   };
 

@@ -440,8 +440,44 @@ export class OverlightChromaTest implements OverlightTest<OverlightChromaTestRes
   }
 
   result(): OverlightChromaTestResult {
-    const sr = this.skillTest.result() as OverlightChromaTestResult;
-    sr.cost = this.skillTest.hand.poolSpirit.results()[0].face;
-    return sr;
+    this.hand.roll();
+
+    const result = {
+      successes: this.hand.successes(),
+      successesRaw: this.hand.successes(),
+      gameResult: "fail" as OverlightGameResult,
+      gameResultRaw: "fail" as OverlightGameResult,
+      spiritResult: "none" as OverlightSpiritResult,
+      cost: this.hand.poolSpirit.highestResult().face,
+      hand: this.hand,
+      poolOneType: this.hand.poolOne.type,
+      poolOneName: this.hand.poolOne.name,
+      poolOneFormula: this.hand.poolOne.toFoundry()[0].formula,
+      poolOneSuccesses: this.hand.poolOne.successes(),
+      poolOneResults: this.hand.poolOne.results(),
+      poolTwoType: this.hand.poolTwo.type,
+      poolTwoName: this.hand.poolTwo.name,
+      poolTwoFormula: this.hand.poolTwo.toFoundry()[0].formula,
+      poolTwoSuccesses: this.hand.poolTwo.successes(),
+      poolTwoResults: this.hand.poolTwo.results(),
+      poolSpiritName: this.hand.poolSpirit.name,
+      poolSpiritType: this.hand.poolSpirit.type,
+      poolSpiritFormula: this.hand.poolSpirit.toFoundry().length > 0 ? this.hand.poolSpirit.toFoundry()[0].formula : "",
+      poolSpiritSuccesses: this.hand.poolSpirit.successes(),
+      poolSpiritResults: this.hand.poolSpirit.results(),
+    };
+
+    if (result.successes >= 6) {
+      result.gameResult = "brilliant";
+      result.gameResultRaw = "brilliant";
+    } else if (result.successes >= 4) {
+      result.gameResult = "radiant";
+      result.gameResultRaw = "radiant";
+    } else if (result.successes >= 2) {
+      result.gameResult = "luminous";
+      result.gameResultRaw = "luminous";
+    }
+
+    return result;
   }
 }

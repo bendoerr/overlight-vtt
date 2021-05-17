@@ -1,0 +1,75 @@
+<div class="dice-roll">
+  <div class="dice-result">
+    <div class="dice-formula">
+      <div>
+        {{localize (concat 'overlight-vtt.tests.results.' gameResult '.name')}}
+      </div>
+      <div style="font-size: smaller; margin-top: -4px;">
+        {{successes}} {{localize 'overlight-vtt.chat.roll-chroma-test.successes'}}
+      </div>
+      <div style="font-size: smaller; margin-top: -4px;">
+        {{localize 'overlight-vtt.chat.roll-chroma-test.cost'}}: {{cost}}
+      </div>
+    </div>
+    <div class="dice-tooltip">
+      <section class="tooltip-part">
+        <div class="dice">
+          <header class="part-header flexrow">
+            <span class="part-formula">
+             {{localize (concat 'overlight-vtt.' poolOneType '.' poolOneName '.name')}}
+            </span>
+            <span>
+              {{poolOneFormula}}
+            </span>
+            <span class="part-total">
+              {{poolOneSuccesses}}
+            </span>
+          </header>
+          <ol class="dice-rolls">
+            {{#each poolOneResults}}
+            <li class="roll die {{this.type}} {{#if this.success}}success{{/if}}">{{this.face}}</li>
+            {{/each}}
+          </ol>
+        </div>
+        <div class="dice">
+          <header class="part-header flexrow">
+            <span class="part-formula">
+             {{localize (concat 'overlight-vtt.' poolTwoType '.' poolTwoName '.name')}}
+            </span>
+            <span>
+              {{poolTwoFormula}}
+            </span>
+            <span class="part-total">
+              {{poolTwoSuccesses}}
+            </span>
+          </header>
+          <ol class="dice-rolls">
+            {{#each poolTwoResults}}
+            <li class="roll die {{this.type}} {{#if this.success}}success{{/if}}">{{this.face}}</li>
+            {{/each}}
+          </ol>
+        </div>
+        {{#if (ne poolSpiritFormula '')}}
+        <div class="dice">
+          <header class="part-header flexrow">
+            <span class="part-formula">
+             {{localize (concat 'overlight-vtt.' poolSpiritType '.' poolSpiritName '.name')}}
+            </span>
+            <span>
+              {{poolSpiritFormula}}
+            </span>
+            <span class="part-total">
+              {{poolSpiritSuccesses}}
+            </span>
+          </header>
+          <ol class="dice-rolls">
+            {{#each poolSpiritResults}}
+            <li class="roll die {{this.type}} {{#if this.success}}success{{/if}}">{{this.face}}</li>
+            {{/each}}
+          </ol>
+        </div>
+        {{/if}}
+      </section>
+    </div>
+  </div>
+</div>

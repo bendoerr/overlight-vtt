@@ -221,28 +221,30 @@ overlight-vtt:
       text: TODO
   tests:
     skill:
-      name: 🧬 Skill Test
+      name: ✨ Skill Test
     combat:
       name: ⚔️ Combat Test
     open:
       name: 💠 Open Test
+    chroma:
+      name: 🌈 Chroma Test
     results:
       fail:
-        name: Failure
+        name: Failure 💢
       luminous:
-        name: Luminous Success
+        name: Luminous 💡 Success
       radiant:
-        name: Radiant Success
+        name: Radiant 💡💡 Success
       brilliant:
-        name: Brilliant Success
+        name: Brilliant 💡💡💡 Success
       legendary:
-        name: Legendary Success
+        name: Legendary ⚜️⚜️⚜️⚜️ Success
       flare:
-        name: Spirit Flare
+        name: Spirit 🔥 Flare
       pool:
-        name: +1 Spirit Pool
+        name: +1 Spirit 💜 Pool
       fury:
-        name: +1 Fury Pool
+        name: +1 Fury ❤️ Pool
   dialog:
     roll-skill-test:
       close: Close
@@ -250,7 +252,7 @@ overlight-vtt:
       roll: Roll 🎲
       skill-die: Skill Die
       skill: Skill
-      title: Roll 🧬 Skill Test
+      title: Roll ✨ Skill Test
       virtue-die: Virtue Die
       virtue: Virtue
     roll-combat-test:
@@ -271,6 +273,15 @@ overlight-vtt:
       title: Roll 💠️ Open Test
       virtue-die: Virtue Die
       virtue: Virtue
+    roll-chroma-test:
+      close: Close
+      include-spirit: Include Spirit Die?
+      roll: Roll 🎲
+      skill-die: Virtue 2 Die
+      skill: Virtue 2
+      title: Roll 🌈 Chroma Test
+      virtue-die: Virtue 1 Die
+      virtue: Virtue 1
   chat:
     roll-skill-test:
       successes: Successes
@@ -278,3 +289,6 @@ overlight-vtt:
       damage: Damage
     roll-open-test:
       highest: Highest
+    roll-chroma-test:
+      successes: Successes
+      cost: Cost

@@ -1,0 +1,91 @@
+<form id="dice-pool-form" class="overlight-form">
+  <div class="dice-pool flexrow">
+    <div class="flexcol">
+      <label for="roll-skill-test.virtue">{{localize 'overlight-vtt.dialog.roll-chroma-test.virtue'}}</label>
+    </div>
+    <div class="flexcol">
+      <select id="roll-skill-test.virtue" name="virtue">
+        {{#each virtues as |v|}}
+        <option value="{{v}}">
+          {{localize (concat 'overlight-vtt.virtue.' v '.name')}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="flexcol"></div>
+  </div>
+  <div class="dice-pool flexrow">
+    <div class="flexcol">
+      <label for="roll-skill-test.virtue-die">{{localize 'overlight-vtt.dialog.roll-chroma-test.virtue-die'}}</label>
+    </div>
+    <div class="flexcol">
+      <select id="roll-skill-test.virtue-die" name="virtue-die">
+        {{#select defaults.virtue-die}}
+        {{#each die as |d|}}
+        <option value="{{d}}">
+          {{localize (concat 'overlight-vtt.die.' d)}}
+        </option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+    <div class="flexcol">
+      <select id="roll-skill-test.virtue.mod" name="virtue-mod">
+        {{#each modifiers as |m|}}
+        <option value="{{m}}">
+          {{localize (concat 'overlight-vtt.modifier.' m '.name')}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="dice-pool flexrow">
+    <div class="flexcol">
+      <label for="roll-skill-test.skill">{{localize 'overlight-vtt.dialog.roll-chroma-test.skill'}}</label>
+    </div>
+    <div class="flexcol">
+      <select id="roll-skill-test.skill" name="skill">
+        {{#each skills as |v|}}
+        <option value="{{v}}">
+          {{localize (concat 'overlight-vtt.virtue.' v '.name')}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="flexcol"></div>
+  </div>
+  <div class="dice-pool flexrow">
+    <div class="flexcol">
+      <label for="roll-skill-test.skill-die">{{localize 'overlight-vtt.dialog.roll-chroma-test.skill-die'}}</label>
+    </div>
+    <div class="flexcol">
+      <select id="roll-skill-test.skill-die" name="skill-die">
+        {{#select defaults.skill-die}}
+        {{#each die as |d|}}
+        <option value="{{d}}">
+          {{localize (concat 'overlight-vtt.die.' d)}}
+        </option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+    <div class="flexcol">
+      <select id="roll-skill-test.skill.mod" name="skill-mod">
+        {{#each modifiers as |m|}}
+        <option value="{{m}}">
+          {{localize (concat 'overlight-vtt.modifier.' m '.name')}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="dice-pool flexrow">
+    <div class="flexrow">
+      <label for="roll-skill-test.include-spirit">{{localize 'overlight-vtt.dialog.roll-chroma-test.include-spirit'}}</label>
+    </div>
+    <div class="flexrow">
+      <input id="roll-skill-test.include-spirit" name="include-spirit" type="checkbox" checked>
+    </div>
+    <div class="flexrow"></div>
+  </div>
+</form>

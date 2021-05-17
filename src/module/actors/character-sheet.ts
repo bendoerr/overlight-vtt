@@ -58,7 +58,7 @@ export class OverlightCharacterSheet extends ActorSheet<OverlightCharacterData, 
       .on("click", (event) => {
         event.preventDefault();
         event.stopPropagation();
-        const a = new game.overlight.dialogs.RollSkillTestDialog();
+        const a = new game.overlight.dialogs.RollChromaTestDialog();
         a.render();
       });
   }
