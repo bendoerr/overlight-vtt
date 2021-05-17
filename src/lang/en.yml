@@ -95,6 +95,8 @@ overlight-vtt:
         circumstances, it is brute strength and simple persistence. Muscle and
         mountains, iron and blood. The virture of war and the hunting of
         titanic beasts. A fist squeezing red fire into intention.
+    wealth:
+      name: Wealth
   skill:
     folklore:
       name: Folklore
@@ -228,6 +230,8 @@ overlight-vtt:
       name: 💠 Open Test
     chroma:
       name: 🌈 Chroma Test
+    wealth:
+      name: 💰 Wealth Test
     results:
       fail:
         name: Failure 💢
@@ -280,6 +284,15 @@ overlight-vtt:
       skill-die: Virtue 2 Die
       skill: Virtue 2
       title: Roll 🌈 Chroma Test
+      virtue-die: Virtue 1 Die
+      virtue: Virtue 1
+    roll-wealth-test:
+      close: Close
+      include-spirit: Include Spirit Die?
+      roll: Roll 🎲
+      skill-die: Virtue 2 Die
+      skill: Virtue 2
+      title: Roll 💰 Wealth Test
       virtue-die: Virtue 1 Die
       virtue: Virtue 1
   chat:

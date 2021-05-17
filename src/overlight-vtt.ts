@@ -23,6 +23,7 @@ import { registerAllHelpers } from "./module/handlebars";
 import { RollCombatTestDialog } from "./module/dialogs/roll-combat-test";
 import { RollOpenTestDialog } from "./module/dialogs/roll-open-test";
 import { RollChromaTestDialog } from "./module/dialogs/roll-chroma-test";
+import { RollWealthTestDialog } from "./module/dialogs/roll-wealth-test";
 
 Hooks.once("init", async function () {
   console.log("Overlight | Initializing Overlight");
@@ -41,6 +42,7 @@ Hooks.once("init", async function () {
       RollCombatTestDialog,
       RollOpenTestDialog,
       RollChromaTestDialog,
+      RollWealthTestDialog,
     },
   };
 
